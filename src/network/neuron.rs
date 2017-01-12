@@ -43,6 +43,9 @@ impl Sigmoid {
         {
         	sum += inputs[i].out()*self.weights[i];
         }
+
+        sum = sum/inputs.len() as f64;
+
         self.cached_output = sum;
 	}
 

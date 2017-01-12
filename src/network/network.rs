@@ -25,7 +25,7 @@ impl FeedFoward {
 		for _ in 0..::HIDDEN_N as usize
 		{
 			let mut sigmoid = neuron::Sigmoid::new(::INPUT_N as usize);
-			//sigmoid.randomize_weights();
+			sigmoid.randomize_weights();
 			feed.hidden.push(sigmoid);
 		}
 
@@ -78,6 +78,11 @@ impl FeedFoward {
     {
     	let current = self.run(input_data);
 
+    	let current_cost = self.outputs[current as usize].out();
+    	let supposed_cost = self.outputs[supposed as usize].out();
+
+    	let error_amount = (supposed_cost - current_cost).abs();
+
     	/*println!("Current: {:?}", current);
     	println!("Supposed: {:?}", supposed);
     	if current == supposed
@@ -93,14 +98,14 @@ impl FeedFoward {
 		{
 			if current != supposed
 			{
-				self.outputs[current as usize].weights[i] -= 0.05;
+				self.outputs[current as usize].weights[i] -= 0.001 * error_amount*10.0;
 				if self.outputs[current as usize].weights[i] < 0.0
 				{
 					self.outputs[current as usize].weights[i] = 0.0;
 				}
 			}
 			else {
-			    self.outputs[current as usize].weights[i] += 0.05;
+			    self.outputs[current as usize].weights[i] += 0.01 * error_amount*10.0;
 			   	if self.outputs[current as usize].weights[i] > 1.0
 				{
 					self.outputs[current as usize].weights[i] = 1.0;

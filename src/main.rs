@@ -138,7 +138,7 @@ fn main() {
     let mut wrong_answers:i32 = 0;
     let mut correct_answers:i32 = 0;
 
-    for i in 0..1000
+    for i in 0..10000
     {
     	let answer = feed_network.run(image_data[i*28*28..i*28*28 + 28*28].to_vec());
     	let supposed = test_labels[i];
