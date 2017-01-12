@@ -1,6 +1,6 @@
 pub const  INPUT_N: i32 = 28*28;
 pub const  LAYERS: i32 = 1;
-pub const  HIDDEN_N: i32 = 15;
+pub const  HIDDEN_N: i32 = 30;
 pub const  OUTPUT_N: i32 = 10;
 pub const  IMAGE_SIZE: i32 = 28;
 
