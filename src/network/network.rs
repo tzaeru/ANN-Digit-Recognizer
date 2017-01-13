@@ -36,8 +36,6 @@ impl FeedFoward {
 			feed.outputs.push(sigmoid);
 		}
 
-		println!("HELO WORLD");
-
         return feed;
     }
 
