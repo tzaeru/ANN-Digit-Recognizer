@@ -1,13 +1,13 @@
 pub const  INPUT_N: i32 = 28*28;
 pub const  LAYERS: i32 = 1;
-pub const  HIDDEN_N: i32 = 25;
+pub const  HIDDEN_N: i32 = 40;
 pub const  OUTPUT_N: i32 = 10;
 pub const  IMAGE_SIZE: i32 = 28;
 
 pub const  TEACH_SIZE: i32 = 60000;
 pub const  TEST_SIZE: i32 = 10000;
 
-pub const  EPOCHS: i32 = 50;
+pub const  EPOCHS: i32 = 4;
 
 use std::io::Read;
 use std::fs::File;

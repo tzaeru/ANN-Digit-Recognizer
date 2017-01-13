@@ -46,7 +46,7 @@ impl Sigmoid {
 
         sum = sum/inputs.len() as f64;
 
-        self.cached_output = sum;
+        self.cached_output = 1.0/(1.0f64 + (-sum).exp());
 	}
 
 	pub fn set_output(&mut self, output: f64)
